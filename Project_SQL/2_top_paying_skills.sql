@@ -32,7 +32,7 @@ INNER JOIN
 INNER JOIN
     skills_dim on skills_job_dim.skill_id = skills_dim.skill_id
  ORDER BY
-    salary_year_avg DESC
+    salary_year_avg DESC;
 
 
 /* Insights: two programing languages top the list

@@ -26,6 +26,6 @@
     HAVING
         COUNT(job_postings_fact.job_id) > 10
     ORDER BY
-    average_salary DESC,
-    demand_count DESC
-    LIMIT 20
+        average_salary DESC,
+        demand_count DESC
+    LIMIT 20;
