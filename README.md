@@ -1,1 +1,9 @@
-TODO: update the contents of this later
+Contents:
+- Introduction
+- Background
+- Tools I Used
+- The Analysis
+- What I Learned
+- Conclusions
+
+
