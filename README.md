@@ -4,7 +4,7 @@ Welcome to my SQL Portfolio Project, where I delve into the data job market with
 Check out my SQL queries here [Project_SQL](/Project_SQL/)
 
 ## Background
-This projects stems from better understanding the ever changing data job market. I want to know what skills are on high demand and have high salaries. This will help my job search be more targeted and effetive.
+This projects stems from better understanding the ever changing data job market. I want to know what skills are on high demand and have high salaries. This will help my job search be more targeted and effective.
 
 The data for this analysis is from [Barousse’s SQL Course](https://www.lukebarousse.com/sql). This data includes details on job titles, salaries, locations, and required skills. 
 
@@ -22,15 +22,15 @@ In this project, I utilized a variety of tools to conduct my analysis:
 - **Visual Studio Code:** This open-source administration and development platform helped me manage the database and execute SQL queries.
 - **Git & GitHub**: For version control and sharing my SQL scripts and analysis. Ensuring collaboration and project tracking.
 ## The Analysis
-Each of the following questions aimed to get a better understanding of thee data analysis job market. Questions are all relevant to each other, ultimately finding actionalbe insights.
+Each of the following questions aimed to get a better understanding of thee data analysis job market. Questions are all relevant to each other, ultimately finding actionable insights.
 
 ### 1. Top Paying Data Analyst Jobs
-I filtered data analyst postion by average yearly salary and location. I joined the job postings fact and company dim tables. This query highlights high paying jobs in the field.
+I filtered data analyst position by average yearly salary and location. I joined the job postings fact and company dim tables. This query highlights high paying jobs in the field.
 
 ```sql
 SELECT
     job_id,
-    name as comapny_name,
+    name as company_name,
     job_title,    
     job_location,    
     job_schedule_type,
@@ -49,16 +49,16 @@ LIMIT 10;
 ```
 ![alt text](<SQL_project_data_viz/2_Top Data Analyst Salaries.png>)
 ### 2. Skills for Top Paying Jobs
-To understand what skills are needed for high compensated jobs I used my previous query as a CTE and joined it with the skills dim and skil job dim table to identify the skills required for each job. This provided insights into what employers value for high compensation roles.
+To understand what skills are needed for high compensated jobs I used my previous query as a CTE and joined it with the skills dim and skill job dim table to identify the skills required for each job. This provided insights into what employers value for high compensation roles.
 
 ```sql
 WITH top_paying_jobs AS 
     (SELECT
     job_id,
     job_title,
-    name as comapny_name,  
+    name as company_name,  
     salary_year_avg   
-    FROM company_dimjob_postings_fact
+    FROM job_postings_fact
     LEFT JOIN company_dim on job_postings_fact.company_id=company_dim.company_id
     WHERE job_title_short = 'Data Analyst'
     AND salary_year_avg IS NOT NULL
@@ -159,7 +159,7 @@ I combined my previous findings, high paying roles and demand data, to identify 
     LIMIT 20;
 ```
 
-Each of the queries enabled me to understand the competitive Data Analytics job market better and offered a focused path for career advancement. Furthermore, throughout the project I had a chance to sharpen my SQL skills by leveraging its powerful data manipulation capabilites to derive meaningful insights from complex data sets. 
+Each of the queries enabled me to understand the competitive Data Analytics job market better and offered a focused path for career advancement. Furthermore, throughout the project I had a chance to sharpen my SQL skills by leveraging its powerful data manipulation capabilities to derive meaningful insights from complex data sets. 
 ## Insights
 From the analysis several general conclusions can be made:
 ### 1. Top Paying Jobs: 
@@ -169,13 +169,13 @@ SQL was regarded as the top paying skill for a Data Analyst. Highlighting the im
 ### 3. Most In-Demand Skills:
 Toping the list, again, is SQL. Further identifying it as a critical Data Analyst skill to have.
 ### 4. Skills with High Salaries:
-There are several specialized tools, such as SVN and Solidity. These require profeciency in SQL, Python, and R that equate to high job compensation.
+There are several specialized tools, such as SVN and Solidity. These require proficiency in SQL, Python, and R that equate to high job compensation.
 ### 5. Optimal Skills for Job Market Value:
 SQL continues to be in high demand and is also associated with high paying jobs. Positioning as one of the most optimal skills for Data Analyst to learn and maximize our market value.
 ## What I Learned
-Through this projet, I exercised several key SQL techniques and skills:
-- Pracite SQL: Enhance my ETL skills by actively practicing SQL, while consistently applying an analytical mindset throughout this analysis. 
-- Comlpex Query Construction/Data Aggregation: Utilizing GROUP BY and aggregate functions like COUNT() and AVG() to summarize data effectively. Futher implementing them with more advance queries like JOINS and CTEs for deep dive analysis.
-- Analytitcal Thinking: Understanding my project goal and the data that I was working with enabled me to translate real-world questions into actionable SQL queries giving me insighful answers.
+Through this project, I exercised several key SQL techniques and skills:
+- Practice SQL: Enhance my ETL skills by actively practicing SQL, while consistently applying an analytical mindset throughout this analysis. 
+- Complex Query Construction/Data Aggregation: Utilizing GROUP BY and aggregate functions like COUNT() and AVG() to summarize data effectively. Further implementing them with more advance queries like JOINS and CTEs for deep dive analysis.
+- Analytical Thinking: Understanding my project goal and the data that I was working with enabled me to translate real-world questions into actionable SQL queries giving me insightful answers.
 # Conclusions
 In this project I discover the ever changing skill needs for Data Analyst jobs. This was accomplish by identify the top skills highly valued by employers. Utilizing SQL to write practical queries I was able to extract valuable insights. As an aspiring Data Analyst seeing the importance of SQL will help pave the path forward be considered a strong candidate. As I look to continue my learning and adaptation to emerging trends in the field of data analytics, I will ensure that database languages are at the top of my priority list, like SQL.
