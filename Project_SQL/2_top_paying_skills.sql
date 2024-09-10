@@ -11,7 +11,7 @@ WITH top_paying_jobs AS
     job_title,
     name as comapny_name,  
     salary_year_avg   
-    FROM company_dimjob_postings_fact
+    FROM job_postings_fact
     LEFT JOIN company_dim on job_postings_fact.company_id=company_dim.company_id
     WHERE job_title_short = 'Data Analyst'
     AND salary_year_avg IS NOT NULL
@@ -32,7 +32,8 @@ INNER JOIN
 INNER JOIN
     skills_dim on skills_job_dim.skill_id = skills_dim.skill_id
  ORDER BY
-    salary_year_avg DESC;
+    salary_year_avg DESC
+LIMIT 25;
 
 
 /* Insights: two programing languages top the list
