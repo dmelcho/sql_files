@@ -4,7 +4,7 @@ Welcome to my SQL Portfolio Project, where I delve into the data job market with
 Check out my SQL queries here [Project_SQL](/Project_SQL/)
 
 ## Background
-This projects stems from better understanding the ever changing data job market. I want to know what skills are on high demand and have high salaries. This will help my job search be more targeted and effective.
+This projects stems from a better understanding to the ever changing data job market. I want to know what skills are on high demand and have high salaries. This will help my job search be more targeted and effective.
 
 The data for this analysis is from [Barousse’s SQL Course](https://www.lukebarousse.com/sql). This data includes details on job titles, salaries, locations, and required skills. 
 
@@ -52,19 +52,17 @@ A list of the top jobs:
 
 | Job Title                                     | Company Name                       |  Salary Year Avg |
 |-----------------------------------------------|------------------------------------|------------------|
-| Data Analyst                                  | Mantys                             |  650000          |
-| Director of Analytics                         | Meta                               |  336500          |
-| Associate Director- Data Insights             | AT&T                               | 255829.5         |
-| Data Analyst, Marketing                       | Pinterest Job Advertisements       | 232423           |
-| Data Analyst (Hybrid/Remote)                 | Uclahealthcareers                   |  217000          |
-| Principal Data Analyst (Remote)              | SmartAsset                          |  205000          |
-| Director, Data Analyst - HYBRID              | Inclusively                         |  189309          |
-| Principal Data Analyst, AV Performance Analysis| Motional                          | 189000           |
-| Principal Data Analyst                        | SmartAsset                         | 186000           |
-| ERM Data Analyst                             | Get It Recruit - Information Technology | 184000           |
+| Data Analyst                                  | Mantys                             |  650,000          |
+| Director of Analytics                         | Meta                               |  336,500          |
+| Associate Director- Data Insights             | AT&T                               | 255,830         |
+| Data Analyst, Marketing                       | Pinterest Job Advertisements       | 232,423           |
+| Data Analyst (Hybrid/Remote)                 | Uclahealthcareers                   |  217,000          |
+| Principal Data Analyst (Remote)              | SmartAsset                          |  205,000          |
+| Director, Data Analyst - HYBRID              | Inclusively                         |  189,309          |
+| Principal Data Analyst, AV Performance Analysis| Motional                          | 189,000           |
+| Principal Data Analyst                        | SmartAsset                         | 186,000           |
+| ERM Data Analyst                             | Get It Recruit - Information Technology | 184,000           |
 
-
-You can copy and paste this Markdown code into any Markdown viewer or editor to display it as a table.
 
 ### 2. Skills for Top Paying Jobs
 To understand what skills are needed for high compensated jobs I used my previous query as a CTE and joined it with the skills dim and skill job dim table to identify the skills required for each job. This provided insights into what employers value for high compensation roles.
@@ -125,7 +123,7 @@ ORDER BY
     demand_count DESC
 LIMIT 5;
 ```
-![In Demand Skills](</SQL_project_data_viz/3_In Demand Skills.png>)
+![Top skills](/Project_SQL\SQL_project_data_viz/3_In%20Demand%20Skills.png)
 ### 4. Skills Based on Salary
 Exploring the average salaries associated with different skills revealed which skills are the highest paying. This can be a guide to my learning path for new skills in data analysis.
 ```sql
@@ -147,7 +145,7 @@ ORDER BY
     avg_salary DESC
 LIMIT 25;
 ```
-![Top Paying In Demand Skills](</SQL_project_data_viz/4_Top Paying Skill.png>)
+![Top Paying In Demand Skills](/Project_SQL\SQL_project_data_viz/4_Top%20Paying%20Skill.png)
 ### 5. Most Optimal Skill to Learn
 I combined my previous findings, high paying roles and demand data, to identify what skills are in high demand and have high salaries. As a job seeker this will help me figure out skills that employers place high value in.
 ```sql
@@ -176,7 +174,7 @@ I combined my previous findings, high paying roles and demand data, to identify 
         demand_count DESC
     LIMIT 20;
 ```
-![Optimal Skills](</SQL_project_data_viz/5_Optimal Skills.png>)
+![Optimal Skills](/Project_SQL/SQL_project_data_viz/5_Optimal%20Skills.png)
 
 Each of the queries enabled me to understand the competitive Data Analytics job market better and offered a focused path for career advancement. Furthermore, throughout the project I had a chance to sharpen my SQL skills by leveraging its powerful data manipulation capabilities to derive meaningful insights from complex data sets. 
 ## Insights
