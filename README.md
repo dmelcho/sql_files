@@ -142,4 +142,4 @@ GROUP BY
     user_type
 LIMIT 20;
 ```
-![Subscriber Top Stations](Google_Capstone_project\SQL_data_viz\3_top_stations_subscriber.png)
+![Subscriber Top Stations](/Google_Capstone_project\SQL_data_viz\3_top_stations_subscriber.png)
