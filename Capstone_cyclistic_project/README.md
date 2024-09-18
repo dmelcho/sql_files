@@ -142,19 +142,20 @@ GROUP BY
     user_type
 LIMIT 20;
 ```
+![Casual Top Stations](/Capstone_cyclistic_project/data_viz/4_top_stations_casual.png)
 ![Subscriber Top Stations](/Capstone_cyclistic_project/data_viz/3_top_stations_subscriber.png)
 
 ### Conclusions & Recs
 
 **Final Insights**
-1. Most of our casual riders are taking rides that last over 30 minutes. We can show them a calculation of the potential savings they could achieve by switching to an annual membership. Demonstrating this value could serve as an incentive for them to upgrade their membership.
-2. Overall, casual users are likely to use our service on the weekends. Here we can promote the advantages of using our service during the week. By demonstrating that our bike service is more than just a weekend activity we will give our riders a reason to sigh up for a membership.
-3. By knowing where the most used starting and ending stations are located we can tap into the member’s sense of adventure. How? By establishing key destinations throughout Chicago; we can show our members how fun and easy it can be to explore uncharted territory with our bike service.
+1. Most of our casual riders are taking rides that last over 30 minutes. By calculation potential savings with an annual membership, we can incentivize them to upgrade.
+2. Overall, casual riders use our service on the weekends. This highlights the opportunity we have to capture more rides during the week by demonstrating that our ride service is more than just a weekend activity.
+3. By identifying popular starting and ending stations we can tap into  member’s sense of adventure. Establishing key destinations throughout Chicago can show our members how fun and easy it can be to explore new areas with our bike service.
 
 **Recommendations**:
-1. Implement marketing campaigns highlighting cost savings for riders. Focusing average a ride users with an average ride of over 30 minutes.
-2. Promote weekday biking by offering showing the value of a annual membership. This can be through discount or loyalty programs.
-3. Develop curated route destinations to inspire exploration of the city with our service.
+1. Implement marketing campaigns highlighting cost savings for riders. We must show a value in our service. Focusing average a ride users with an average ride of over 30 minutes.
+2. Promote weekday biking by showing the value of a annual membership. This can be through discount or loyalty programs that aim to reward our annual members.
+3. Develop curated route destinations to inspire exploration of the city with our service. Encouraging members to find new places frequented by other members.
 
 Leveraging my insights and recommendations we can establish a better customer engagement, increase loyalty, and ultimately drive growth of our annual membership program.
 
