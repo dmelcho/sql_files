@@ -1,8 +1,8 @@
 ## Introduction
-This project culminates all the course work, over 250 hours of learning, in the Google Data Analytics Professional Certificate. With this, we are able to demonstrate and showcase our newly acquired skills. In this self guided project, we have been tasked to analyze data from a bike-share program and deliver impactful insights. 
+This project culminates all the course work, over 250 hours of learning, in the Google Data Analytics Professional Certificate. With this, I am able to demonstrate and showcase our newly acquired skills. In this self guided project, I have been tasked to analyze data from a bike-share program and deliver impactful insights. 
 
 ## Background
-As a junior analyst for the Cyclistic bike-share company, based in Chicago, our main goal is to support the needs of the company to meet organizational goals. Our stakeholders suggest that the future of the company depends on the amount of annual subscribers. Therefore a high priority has been placed by upper management to increase this type of subscription. We have been asked to find the main differences between casual riders and annual subscribers. I will establish a set of questions that will guide my analysis and generate insights for a resolute marketing strategy.
+As a junior analyst for the Cyclistic bike-share company, based in Chicago, my main goal is to support the needs of the company to meet organizational goals. Our stakeholders suggest that the future of the company depends on the amount of annual subscribers. Therefore a high priority has been placed by upper management to increase this type of subscription. I have been asked to find the main differences between casual riders and annual subscribers. I will develop a set of questions to guide my analysis and generate insights for a strong marketing strategy.
 
 Definition of subscribers:
 - Casual Riders = single ride or full day pass
@@ -18,22 +18,22 @@ The following prompts will help me find the main difference between the two type
 3. On which days of the week do different rider types use our service?
 4. What are the most popular stations used by each rider type?
 
-I will be including some of my SQL queries. But to see all of the queries, like creating my database and tables, [follow this link](/Capstone_cyclistic_project/SQL_queries/). There you will find a more detailed explanation of creating the database, data cleansing, and calculations.
+In this report I will be including some of my SQL queries. To see my methodologies for this analysis using SQL[follow this link](/Capstone_cyclistic_project/SQL_queries/). There you will find a more detailed explanation of creating the database, data cleansing, and calculations.
 
 ### Tools I used
 In this project I used a few tools to help with the analysis process:
 
-- **Postgres SQL:** Given the volume of data, I will be using SQL for ETL 
-- **Tableau:** I used the data viz tool to illustrate my findings, helping stakeholders better comprehend my analysis. 
+- **Postgres SQL:** Given the volume of data, I will using a Postgres  
+- **Tableau:** I used the data viz tool to illustrate my findings, helping stakeholders better conceptualize my analysis. 
 - **Visual Studio Code:** This open-source administration and development platform helped me manage the database and execute SQL queries.
 - **Git & GitHub**: For version control and sharing my SQL scripts and analysis. Ensuring collaboration and project tracking.
 
 ## Analysis
-In order to generate the best possible insights, I used my prompted questions aiming to understand the usage of our different members:
+As previously mentioned, I used my set of questions aiming to understand the different behavior of each of our user type.
 
-1. **Ride Difference**: We will start with identifying who, on average, has the longer ride. To further understand the over all picture, I decided it would be beneficial to see the difference grouped by month.
+1. **Ride Difference**: I will start with identifying who, on average, has the longer ride. To further understand the over all picture, I decided it would be beneficial to see the difference grouped by month.
 ```sql
---this query specific to Q3; to get complete results we have to run it for each quarter table
+--this query is specific to Q3; to get complete results we have to run it for each quarter
 SELECT 
     user_type,
     EXTRACT(MONTH FROM from_start_time) AS month, 
@@ -42,7 +42,7 @@ FROM
     rider_data_q3
 WHERE 
     to_station_name != 'HUBBARD ST BIKE CHECKING (LBS-WH-TEST)'
-    --station removed as this was a test that included rides = 1 second
+    --station removed as this was a test that included rides <= 1 second
 GROUP BY 
     user_type,
     month
@@ -82,12 +82,12 @@ GROUP BY
 | Subscriber   | 1,904,596     |
 | Casual      | 619,441      |
 
-Subscriber rides are over double the amount of casual rides. Here we see the big opportunity we have as a company to increase our membership enrollment.
+Subscriber rides are over double the amount of casual rides. However, over 600K rides that are categorized as non-member riders, highlighting significant opportunity the company has to increase  membership enrollment.
 
-3. **Ride Count- Grouped by Day**: Now I want to see if there is a correlation in amount of rides each member takes according to the day of the week. Identifying a pattern here can help us understand usage behavior for both member types.
+3. **Ride Count: Grouped by Day**: Now I want to see if there is a correlation in amount of rides each member takes according to the day of the week. Identifying a pattern here can help us understand usage behavior for both member types.
 
 ```sql
---this query specific to Q3; to get complete results we have to run it for each quarter table
+--this query is specific to Q3; to get complete results we have to run it for each quarter
 WITH weekday AS
     (
     SELECT 
@@ -103,8 +103,9 @@ SELECT
     Rank()Over(PARTITION BY user_type ORDER BY COUNT(day_of_week) DESC ) AS day_rank
 FROM 
     weekdays
-WHERE --adjust the member type here
+WHERE 
     user_type = 'Customer'
+    --adjust the member type here
 GROUP BY     
     day_of_week,
     user_type;
@@ -126,7 +127,8 @@ Here we are abele to find that the subscriber riders are taking a lot more rides
 4. **Top Stations**: This section focuses on the areas where our members tend to ride. Understanding the locations frequented by each type of member provides insights into the reasons customers are using our service.
 
 ```sql
---this query specific to Q3; to get complete results we have to run it for each quarter table
+--this query is specific to Q3; to get complete results we have to run it for each quarter
+
 SELECT 
     from_station_name AS station, 
     user_type AS member_type,
@@ -145,23 +147,25 @@ LIMIT 20;
 ![Casual Top Stations](/Capstone_cyclistic_project/data_viz/4_top_stations_casual.png)
 ![Subscriber Top Stations](/Capstone_cyclistic_project/data_viz/3_top_stations_subscriber.png)
 
-### Conclusions & Recs
+### Conclusions & Recommendations
 
-**Final Insights**
+**Insights**
 1. Most of our casual riders are taking rides that last over 30 minutes. By calculation potential savings with an annual membership, we can incentivize them to upgrade.
 2. Overall, casual riders use our service on the weekends. This highlights the opportunity we have to capture more rides during the week by demonstrating that our ride service is more than just a weekend activity.
 3. By identifying popular starting and ending stations we can tap into  member’s sense of adventure. Establishing key destinations throughout Chicago can show our members how fun and easy it can be to explore new areas with our bike service.
 
-**Recommendations**:
+**What's Next?**:
+Our prompt questions provided a foundation for understanding customer behavior and tailoring services to meet their needs. Below are some recommendations based on my findings.
+
 1. Implement marketing campaigns highlighting cost savings for riders. We must show a value in our service. Focusing average a ride users with an average ride of over 30 minutes.
-2. Promote weekday biking by showing the value of a annual membership. This can be through discount or loyalty programs that aim to reward our annual members.
+2. Promote weekday biking by showing the value of a annual membership. This can be through discount or loyalty programs that aim to reward our annual members. Naturally increasing the value of our annual membership.
 3. Develop curated route destinations to inspire exploration of the city with our service. Encouraging members to find new places frequented by other members.
 
 Leveraging my insights and recommendations we can establish a better customer engagement, increase loyalty, and ultimately drive growth of our annual membership program.
 
 ### What I learned
-There were some challenges with my data that I had to overcome in order to complete my analysis. Addressing these challenges allowed me to further develop my analytical skills and diversify my data analysis tools.
+There were some challenges with my data that I had to overcome in order to complete my analysis. Addressing these challenges allowed me to further sharpen my analytical skills and diversify my data analysis tools.
 
 - Transforming data with SQL. In order to run calculations, such as arithmetic, I used date functions and casting operators that permitted me to do so.
-- Advance functions for analysis. By using WINDOW functions and Common Table Expressions (CTEs), I was able to extract meaningful insights from the data.
-- Limitations of SQL: While SQL is an exceptional database management system, it does have limitations, such as the inability to provide data visualizations. To address this, I used Tableau to illustrate my findings, which added depth to my analysis. This was particularly beneficial when working with spatial data.
+- Advance functions for analysis. By using WINDOW functions and Common Table Expressions (CTEs), I was able to manipulate the data in order to extract meaningful insights from the data.
+- Limitations of Postgres SQL: While Postgres is an exceptional database management system, it does have limitations, such as the inability to provide data visualizations. To address this, I used Tableau to illustrate my findings, which added depth to my analysis. This was particularly beneficial when working with spatial data.
