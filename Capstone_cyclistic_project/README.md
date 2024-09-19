@@ -23,17 +23,17 @@ In this report I will be including some of my SQL queries. To see my methodologi
 ### Tools I used
 In this project I used a few tools to help with the analysis process:
 
-- **Postgres SQL:** Given the volume of data, I will using a Postgres  
-- **Tableau:** I used the data viz tool to illustrate my findings, helping stakeholders better conceptualize my analysis. 
+- **Postgres SQL:** Given the volume of data, I will be using a Postgres as my relational database management system.
+- **Tableau:** I used this data visualization tool to illustrate my findings, helping stakeholders better conceptualize my analysis. 
 - **Visual Studio Code:** This open-source administration and development platform helped me manage the database and execute SQL queries.
 - **Git & GitHub**: For version control and sharing my SQL scripts and analysis. Ensuring collaboration and project tracking.
 
 ## Analysis
-As previously mentioned, I used my set of questions aiming to understand the different behavior of each of our user type.
+As previously mentioned, I will be using set of questions in search of finding the different behaviors of each user type.
 
-1. **Ride Difference**: I will start with identifying who, on average, has the longer ride. To further understand the over all picture, I decided it would be beneficial to see the difference grouped by month.
+1. **Ride Difference**: I will start with identifying who, on average, has the longer ride. Here I will seek to find patterns and preferences between the two types. To see the big picture, I decided it would be beneficial to see values grouped by month.
 ```sql
---this query is specific to Q3; to get complete results we have to run it for each quarter
+--this query is specific to Q3; to get complete results we need to run the script for each quarter
 SELECT 
     user_type,
     EXTRACT(MONTH FROM from_start_time) AS month, 
@@ -77,17 +77,18 @@ From
 GROUP BY
     user_type;
 ```
+Subscriber rides are over double the amount of casual rides. However, over 600K rides that are categorized as non-member riders, highlighting significant opportunity the company has to increase  membership enrollment.
+
 | Member Type | Total Rides |
 |:-------------:|:-------------:|
 | Subscriber   | 1,904,596     |
 | Casual      | 619,441      |
 
-Subscriber rides are over double the amount of casual rides. However, over 600K rides that are categorized as non-member riders, highlighting significant opportunity the company has to increase  membership enrollment.
 
 3. **Ride Count: Grouped by Day**: Now I want to see if there is a correlation in amount of rides each member takes according to the day of the week. Identifying a pattern here can help us understand usage behavior for both member types.
 
 ```sql
---this query is specific to Q3; to get complete results we have to run it for each quarter
+--this query is specific to Q3; to get complete results we need to run the script for each quarter
 WITH weekday AS
     (
     SELECT 
@@ -112,7 +113,9 @@ GROUP BY
 ```
 !['weekday count'](/Capstone_cyclistic_project/data_viz/2_weekday_count.png)
 
-Here we are abele to find that the subscriber riders are taking a lot more rides per week than causal ones. Casual riders see an increase in ride count on the weekends. When we rank our results, we see a positive correlation in ride count for casual members as the week progresses.
+Here we are abele to find out that subscribers are taking a lot more rides per week than causal members. Casual riders see an increase in ride count on the weekends.
+
+When we rank our results, we see a positive correlation in ride count for casual members as the week progresses.
 
 | Day       | Casual Rank | Day       | Subscriber Rank |
 |:-----------:|:-------------:|:-----------:|:-----------------:|
@@ -124,10 +127,10 @@ Here we are abele to find that the subscriber riders are taking a lot more rides
 | Monday    | 6           | Wednesday | 6               |
 | Tuesday   | 7           | Thursday  | 7               |
 
-4. **Top Stations**: This section focuses on the areas where our members tend to ride. Understanding the locations frequented by each type of member provides insights into the reasons customers are using our service.
+4. **Top Stations**: Now that we have fundamental information about the rides, my next task is to look for where our members tend to ride. Understanding the locations frequented by each type of member provides insights into the reasons customers are using our service.
 
 ```sql
---this query is specific to Q3; to get complete results we have to run it for each quarter
+--this query is specific to Q3; to get complete results we need to run the script for each quarter
 
 SELECT 
     from_station_name AS station, 
@@ -161,7 +164,7 @@ Our prompt questions provided a foundation for understanding customer behavior a
 2. Promote weekday biking by showing the value of a annual membership. This can be through discount or loyalty programs that aim to reward our annual members. Naturally increasing the value of our annual membership.
 3. Develop curated route destinations to inspire exploration of the city with our service. Encouraging members to find new places frequented by other members.
 
-Leveraging my insights and recommendations we can establish a better customer engagement, increase loyalty, and ultimately drive growth of our annual membership program.
+I believe that if we leverage my insights and recommendations we can establish a better customer engagement, increase loyalty, and ultimately drive growth of our annual membership program.
 
 ### What I learned
 There were some challenges with my data that I had to overcome in order to complete my analysis. Addressing these challenges allowed me to further sharpen my analytical skills and diversify my data analysis tools.
