@@ -123,7 +123,8 @@ ORDER BY
     demand_count DESC
 LIMIT 5;
 ```
-![Top skills](/Project_SQL\SQL_project_data_viz/3_In%20Demand%20Skills.png)
+![Top skills](/Project_SQL/SQL_project_data_viz/3_In%20Demand%20Skills.png)
+
 ### 4. Skills Based on Salary
 Exploring the average salaries associated with different skills revealed which skills are the highest paying. This can be a guide to my learning path for new skills in data analysis.
 ```sql
@@ -145,7 +146,8 @@ ORDER BY
     avg_salary DESC
 LIMIT 25;
 ```
-![Top Paying In Demand Skills](/Project_SQL\SQL_project_data_viz/4_Top%20Paying%20Skill.png)
+![Top Paying In Demand Skills](/Project_SQL/SQL_project_data_viz/4_Top%20Paying%20Skill.png)
+
 ### 5. Most Optimal Skill to Learn
 I combined my previous findings, high paying roles and demand data, to identify what skills are in high demand and have high salaries. As a job seeker this will help me figure out skills that employers place high value in.
 ```sql
