@@ -140,8 +140,8 @@ SELECT
 FROM rider_data_q3
 WHERE
     from_station_name != 'HUBBARD ST BIKE CHECKING (LBS-WH-TEST)' AND
+    user_type = 'Customer'
     --adjust the member type here
-    user_type = 'Customer' 
 GROUP BY
     from_station_name,
     user_type
@@ -150,10 +150,12 @@ LIMIT 20;
 ![Casual Top Stations](/Capstone_cyclistic_project/data_viz/4_top_stations_casual.png)
 ![Subscriber Top Stations](/Capstone_cyclistic_project/data_viz/3_top_stations_subscriber.png)
 
+The above image illustrates how casual members spend the majority of the time in areas that would be categorized as "touristy". Here is an opportunity to show that the bike service can go beyond that territory.
+
 ### Conclusions & Recommendations
 
 **Insights**
-1. Most of our casual riders are taking rides that last over 30 minutes. By calculation potential savings with an annual membership, we can incentivize them to upgrade.
+1. Most of our casual riders are taking rides that last over 30 minutes. By calculating potential savings with an annual membership, we can incentivize them to upgrade.
 2. Overall, casual riders use our service on the weekends. This highlights the opportunity we have to capture more rides during the week by demonstrating that our ride service is more than just a weekend activity.
 3. By identifying popular starting and ending stations we can tap into  member’s sense of adventure. Establishing key destinations throughout Chicago can show our members how fun and easy it can be to explore new areas with our bike service.
 
